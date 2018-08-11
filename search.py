@@ -13,8 +13,9 @@ def searchTree(fileName,Dir):
     l = searchInDir(fileName,Dir,l)
     print(l)
     # change to return
-    dir = os.getcwd()
-    fileName = sys.argv[1]
-    searchTree(fileName, dir)
-    print("done")
-    nothing = input()
+
+dir = os.getcwd()
+fileName = sys.argv[1]
+searchTree(fileName, dir)
+print("Press Enter to continue...")
+nothing = input()
