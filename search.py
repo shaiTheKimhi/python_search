@@ -5,7 +5,7 @@ def searchInDir(fileName,dirName,list):
     for f in dirs:
         if(fileName.lower() in f.lower()):
             list.append(dirName+"/"+fileName)
-        if(len(f.split("."))==1):
+        if(os.path.isdir(f)):
             searchInDir(fileName,f,list)
     return list
 def searchTree(fileName,Dir):
@@ -16,7 +16,7 @@ def searchTree(fileName,Dir):
 
 if(len(sys.argv) >= 2):
     fileName = sys.argv[1]
-    dir = len(sys.argv) < 3 ? os.getcwd() : sys.argv[2]
+    dir = os.getcwd() if len(sys.argv) < 3 else sys.argv[2]
 else:
     fileName = input("enter name to search")
     dir = input("enter search start directory")
