@@ -14,8 +14,9 @@ def searchTree(fileName,Dir):
     print(l)
     # change to return
 
-dir = os.getcwd()
-fileName = sys.argv[1]
-searchTree(fileName, dir)
-print("Press Enter to continue...")
-nothing = input()
+if(len(sys.argv) >= 2):
+    fileName = sys.argv[1]
+    dir = len(sys.argv) < 3 ? os.getcwd() : sys.argv[2]
+    searchTree(fileName, dir)
+    print("Press Enter to continue..." + dir + ":" + fileName)
+    nothing = input()
