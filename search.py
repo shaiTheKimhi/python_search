@@ -17,6 +17,10 @@ def searchTree(fileName,Dir):
 if(len(sys.argv) >= 2):
     fileName = sys.argv[1]
     dir = len(sys.argv) < 3 ? os.getcwd() : sys.argv[2]
-    searchTree(fileName, dir)
-    print("Press Enter to continue..." + dir + ":" + fileName)
-    nothing = input()
+else:
+    fileName = input("enter name to search")
+    dir = input("enter search start directory")
+
+searchTree(fileName, dir)
+print("Press Enter to continue..." + dir + ":" + fileName)
+nothing = input()
