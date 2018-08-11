@@ -3,7 +3,7 @@ import sys
 def searchInDir(fileName,dirName,list):
     dirs = os.listdir(dirName)
     for f in dirs:
-        if(f.lower()==fileName.lower()):
+        if(fileName.lower() in f.lower()):
             list.append(dirName+"/"+fileName)
         if(len(f.split("."))==1):
             searchInDir(fileName,f,list)
