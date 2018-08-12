@@ -1,12 +1,12 @@
 import os 
 import sys
 def searchInDir(fileName,dirName,list):
-    dirs = os.listdir(dirName)
+    dirs = os.listdir(os.getcwd())
     for f in dirs:
         if(fileName.lower() in f.lower()):
             list.append(dirName+"/"+fileName)
         if(os.path.isdir(f)):
-            searchInDir(fileName,f,list)
+            list = searchInDir(fileName,f,list)
     return list
 def searchTree(fileName,Dir):
     l=[]
