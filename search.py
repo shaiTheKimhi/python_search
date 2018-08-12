@@ -5,8 +5,8 @@ def searchInDir(fileName,dirName,list):
     for f in dirs: 
         if(fileName.lower() in f.lower()):
             list.append(dirName+"/"+fileName)
-        if(os.path.isdir(f)):
-            list = searchInDir(fileName,f,list)
+        if(os.path.isdir(dirName + "/" + f)):
+            list = searchInDir(fileName, dirName + "/" + f, list)
     return list
 def searchTree(fileName,Dir):
     l=[]
