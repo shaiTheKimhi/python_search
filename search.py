@@ -23,6 +23,10 @@ else:
     fileName = input("enter name to search")
     dir = input("enter search start directory")
 
+def start(path):
+    os.system(path)
+
+
 search_tree(fileName, dir)
 print("Press Enter to continue..." + dir + ":" + fileName)
 nothing = input()
