@@ -15,7 +15,6 @@ def search_tree(fileName,Dir):
     l = search_dir(fileName,Dir,l)
     print(l)
     return l
-    # change to return
 
 if(len(sys.argv) >= 2):
     fileName = sys.argv[1]
