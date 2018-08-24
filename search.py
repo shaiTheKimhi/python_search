@@ -1,17 +1,20 @@
 import os 
 import sys
-def searchInDir(fileName,dirName,list):
+
+
+def search_dir(fileName,dirName,list):
     dirs = os.listdir(dirName)
-    for f in dirs: 
-        if(fileName.lower() in f.lower()):
+    for f in dirs:
+        if(fileName.lower() in f.lower() and dirName+"/"+fileName not in list):
             list.append(dirName+"/"+fileName)
         if(os.path.isdir(dirName + "/" + f)):
-            list = searchInDir(fileName, dirName + "/" + f, list)
+            list = search_dir(fileName, dirName + "/" + f, list)
     return list
-def searchTree(fileName,Dir):
+def search_tree(fileName,Dir):
     l=[]
-    l = searchInDir(fileName,Dir,l)
+    l = search_dir(fileName,Dir,l)
     print(l)
+    return l
     # change to return
 
 if(len(sys.argv) >= 2):
@@ -21,6 +24,6 @@ else:
     fileName = input("enter name to search")
     dir = input("enter search start directory")
 
-searchTree(fileName, dir)
+search_tree(fileName, dir)
 print("Press Enter to continue..." + dir + ":" + fileName)
 nothing = input()
